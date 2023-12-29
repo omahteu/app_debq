@@ -7,18 +7,12 @@
     <title>Formulário e Tabela</title>
     <!-- Adicione os links para os estilos do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Adicione estilos adicionais conforme necessário */
-        body {
-            padding: 20px;
-            background-color: whitesmoke;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/estatistico/style.css">
 </head>
 
 <body>
-
     <h1>Relatório DEBQ</h1>
+    <br>
 
     <!-- Formulário -->
     <form id="myForm">
@@ -57,45 +51,32 @@
         </div>
         <div class="form-group">
             <label for="input5">Reunião de diretoria:</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Deixar em branco caso não haja."></textarea>
+            <textarea class="form-control" name="" id="" cols="30" rows="10"
+                placeholder="Deixar em branco caso não haja."></textarea>
         </div>
         <div class="form-group">
             <label for="input5">Reunião de professores:</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Deixar em branco caso não haja."></textarea>
+            <textarea class="form-control" name="" id="" cols="30" rows="10"
+                placeholder="Deixar em branco caso não haja."></textarea>
         </div>
         <div class="form-group">
             <label for="input5">Atividades extra-curriculares:</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Deixar em branco caso não haja."></textarea>
+            <textarea class="form-control" name="" id="" cols="30" rows="10"
+                placeholder="Deixar em branco caso não haja."></textarea>
         </div>
         <div class="form-group">
             <label for="input5">Atividades missionárias:</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Deixar em branco caso não haja."></textarea>
+            <textarea class="form-control" name="" id="" cols="30" rows="10"
+                placeholder="Deixar em branco caso não haja."></textarea>
         </div>
         <div class="form-group">
             <label for="input5">Datas comemorativas:</label>
-            <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Deixar em branco caso não haja."></textarea>
+            <textarea class="form-control" name="" id="" cols="30" rows="10"
+                placeholder="Deixar em branco caso não haja."></textarea>
         </div>
-        <button type="button" class="btn btn-primary" onclick="salvarDados()">Enviar</button>
+        <button type="button" class="btn btn-success" onclick="salvarDados()">Próximo</button>
+        <button type="button" class="btn btn-danger">Cancelar</button>
     </form>
-
-    <hr>
-
-    <!-- Tabela -->
-    <h2>Dados Salvos</h2>
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Campo 1</th>
-                    <th>Campo 2</th>
-                    <th>Campo 3</th>
-                    <th>Campo 4</th>
-                    <th>Campo 5</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaCorpo"></tbody>
-        </table>
-    </div>
 
     <!-- Adicione os scripts do Bootstrap e do JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
