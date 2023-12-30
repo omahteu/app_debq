@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário e Tabela</title>
+    <title>DEBQ 207 | Financeiro</title>
     <!-- Adicione os links para os estilos do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/financeiro/style.css">
+    <link rel="shortcut icon" href="./imagens/icon.png" type="image/x-icon">
 </head>
 
 <body>
-    <h1>Relatório DEBQ</h1>
+    <h1>Relatório DEBQ | Financeiro</h1>
     <br>
 
     <!-- Formulário -->
     <form id="myForm" method="post">
-        <h2>Financeiro</h2>
-        <br>
         <h3>Entradas</h3>
         <div class="form-group">
             <label for="input1">Número de membros da Igreja Local:</label>
@@ -39,6 +38,7 @@
             <label for="input5">Número de classes infantil/juniores:</label>
             <input type="text" class="form-control" id="input5" required>
         </div>
+        <br>
         <h3>Saídas</h3>
         <div class="form-group">
             <label for="input5">Número de classes adolescentes:</label>
@@ -60,7 +60,8 @@
             <label for="input5">Número de classes adultos:</label>
             <input type="text" class="form-control" id="input5" required>
         </div>
-        <button type="button" class="btn btn-primary" onclick="salvarDados()">Enviar</button>
+        <button type="button" class="btn btn-success">Enviar</button>
+        <button type="reset" class="btn btn-danger">Cancelar</button>
     </form>
 
     <!-- Adicione os scripts do Bootstrap e do JavaScript -->
