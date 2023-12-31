@@ -31,23 +31,31 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                
+                <?php
+                include("conexao.php"); // Certifique-se de incluir o arquivo de conexão
+        
+                // Executar operação de SELECT
+                $sql = "SELECT id, nome, email FROM usuarios";
+                $result = $conn->query($sql);
+        
+                if ($result->num_rows > 0) {
+                    // Exibir os dados em uma tabela HTML
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row['id'] . "</td>";
+                        echo "<td>" . $row['nome'] . "</td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
+                }
+        
+                // Fechar a conexão
+                $conn->close();
+                ?>
+                
             </tbody>
         </table>
     </div>

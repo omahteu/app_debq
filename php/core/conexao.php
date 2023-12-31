@@ -1,8 +1,8 @@
 <?php
-$host = "seu_host_mysql";
-$usuario = "seu_usuario_mysql";
-$senha = "sua_senha_mysql";
-$banco = "seu_banco_de_dados";
+$host = "us-imm-web909.main-hosting.eu";
+$usuario = "u626803805_debq207";
+$senha = "A01d02c03b$";
+$banco = "u626803805_debq207";
 
 $conn = new mysqli($host, $usuario, $senha, $banco);
 

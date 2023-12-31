@@ -13,14 +13,14 @@
 <body>
     <div class="container login-container">
         <h2 class="text-center mb-4">DEBQ 207</h2>
-        <form method="post">
+        <form method="post" action="./php/login/main.php">
             <div class="form-group">
                 <label for="username">Usuário:</label>
-                <input type="text" class="form-control" name="usuario" placeholder="Usuário" required>
+                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuário" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha:</label>
-                <input type="password" class="form-control" name="senha" placeholder="Senha" required>
+                <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Entrar</button>
         </form>

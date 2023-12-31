@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    header("location: index.php"); // redireciona para a página de login se não houver sessão
+    exit();
+}
+
+?>
 <!doctype html>
 <html lang="pt-br" class="h-100" data-bs-theme="auto">
 
@@ -24,9 +34,10 @@
             <div>
                 <h3 class="float-md-start mb-0">DEBQ 207</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link fw-bold py-1 px-0" href="./perfil.html">Perfil</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="./perfil.php">Perfil</a>
                     <a class="nav-link fw-bold py-1 px-0" href="./estatistico.html">Fazer Relatório</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="./relatorio.html">Listar Relatórios</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="./relatorio.php">Listar Relatórios</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="./php/logout/main.php">Sair</a>
                 </nav>
             </div>
         </header>
@@ -49,3 +60,4 @@
 </body>
 
 </html>
+
