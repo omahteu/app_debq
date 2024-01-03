@@ -24,28 +24,37 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Infantil</th>
+                    <th scope="col">Adolescentes</th>
+                    <th scope="col">Jovens</th>
+                    <th scope="col">Adultos</th>
+                    <th scope="col">Entradas</th>
+                    <th scope="col">Saídas</th>
                 </tr>
             </thead>
             <tbody>
                 
                 <?php
-                include("conexao.php"); // Certifique-se de incluir o arquivo de conexão
+                include("./php/core/conexao.php"); // Certifique-se de incluir o arquivo de conexão
         
                 // Executar operação de SELECT
-                $sql = "SELECT id, nome, email FROM usuarios";
+                $sql = "SELECT * FROM relatorios";
                 $result = $conn->query($sql);
         
                 if ($result->num_rows > 0) {
                     // Exibir os dados em uma tabela HTML
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . $row['id'] . "</td>";
-                        echo "<td>" . $row['nome'] . "</td>";
-                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td>" . $row['data'] . "</td>";
+                        echo "<td>" . $row['infantil'] . "</td>";
+                        echo "<td>" . $row['adolescentes'] . "</td>";
+                        echo "<td>" . $row['jovens'] . "</td>";
+                        echo "<td>" . $row['adultos'] . "</td>";
+                        $entradas = $row['e1'] + $row['e2'] + $row['e3'] + $row['e4'] + $row['e5'];
+                        echo "<td>" . $entradas . "</td>";
+                        $saidas = $row['s1'] + $row['s2'] + $row['s3'] + $row['s4'] + $row['s5'];
+                        echo "<td>" . $saidas. "</td>";
                         echo "</tr>";
                     }
                 } else {
