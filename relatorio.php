@@ -21,51 +21,58 @@
 
 <body>
     <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Data</th>
-                    <th scope="col">Infantil</th>
-                    <th scope="col">Adolescentes</th>
-                    <th scope="col">Jovens</th>
-                    <th scope="col">Adultos</th>
-                    <th scope="col">Entradas</th>
-                    <th scope="col">Saídas</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-                <?php
-                include("./php/core/conexao.php"); // Certifique-se de incluir o arquivo de conexão
-        
-                // Executar operação de SELECT
-                $sql = "SELECT * FROM relatorios";
-                $result = $conn->query($sql);
-        
-                if ($result->num_rows > 0) {
-                    // Exibir os dados em uma tabela HTML
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row['data'] . "</td>";
-                        echo "<td>" . $row['infantil'] . "</td>";
-                        echo "<td>" . $row['adolescentes'] . "</td>";
-                        echo "<td>" . $row['jovens'] . "</td>";
-                        echo "<td>" . $row['adultos'] . "</td>";
-                        $entradas = $row['e1'] + $row['e2'] + $row['e3'] + $row['e4'] + $row['e5'];
-                        echo "<td>" . $entradas . "</td>";
-                        $saidas = $row['s1'] + $row['s2'] + $row['s3'] + $row['s4'] + $row['s5'];
-                        echo "<td>" . $saidas. "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
+        <table class="table table-hover">  
+            <?php
+            include("./php/core/conexao.php"); // Certifique-se de incluir o arquivo de conexão
+
+            // Executar operação de SELECT
+            $sql = "SELECT * FROM relatorios";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // Exibir os dados em uma tabela HTML
+                while ($row = $result->fetch_assoc()) {
+
+                    $entradas = $row['e1'] + $row['e2'] + $row['e3'] + $row['e4'] + $row['e5'];
+                    $saidas = $row['s1'] + $row['s2'] + $row['s3'] + $row['s4'] + $row['s5'];
+
+                    echo '<table>';
+                    echo    '<tr>';
+                    echo        '<th>Data</th>';
+                    echo        '<br>';
+                    echo        '<td>'. $row['data']. '</td>';
+                    echo    '</tr>';
+                    echo    '<tr>';
+                    echo        '<th>Infantil</th>';
+                    echo        '<td>' . $row['infantil'] . '</td>';
+                    echo    '</tr>';
+                    echo    '<tr>';
+                    echo        '<th>Adolescentes</th>';
+                    echo        '<td>' . $row['adolescentes'] . '</td>';
+                    echo    '</tr>';
+                    echo    '<tr>';
+                    echo        '<th>Jovens</th>';
+                    echo        '<td>' . $row['jovens'] . '</td>';
+                    echo    '</tr>';
+                    echo    '<tr>';
+                    echo        '<th>Adultos</th>';
+                    echo        '<td>' . $row['adultos'] . '</td>';
+                    echo    '</tr>';
+                    echo    '<tr>';
+                    echo        '<th>Adultos</th>';
+                    echo        '<td>'  . $entradas .  '</td>';
+                    echo    '</tr>';
+                    echo    '<tr>';
+                    echo        '<th>Adultos</th>';
+                    echo        '<td>'  . $saidas .  '</td>';
+                    echo    '</tr>';
+                    echo'</table>';
                 }
-        
-                // Fechar a conexão
-                $conn->close();
-                ?>
-                
-            </tbody>
+            } else {
+                echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
+            }
+            $conn->close();
+            ?>
         </table>
     </div>
 </body>

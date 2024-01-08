@@ -16,11 +16,13 @@ if (!isset($_SESSION['id'])) {
     <link rel="shortcut icon" href="./imagens/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/estatistico/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <form method="post" action="./php/perfil/main.php">
-        <h2>Perfil | <?php echo $_SESSION['igreja'] ?></h2>
+        
+        <h2><a href="./home.php"><i class="bi bi-house"></i></a> | Perfil | <?php echo $_SESSION['igreja'] ?></h2>
         <div class="form-group" hidden>
             <label for="input1">Número de membros da Igreja Local:</label>
             <input type="text" class="form-control" name="codigo" value="<?php echo $_SESSION['codigo'] ?>" required>
